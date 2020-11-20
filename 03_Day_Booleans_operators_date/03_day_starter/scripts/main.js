@@ -123,15 +123,14 @@ const howOldAreYou = Number(prompt("enter number of years"));
 
 console.log(`you lived: ${howOldAreYou * 365 * 24 * 60 * 60} seconds`);
 
-const timeZone = new Date().toLocaleTimeString([], {
-  hour: "2-digit",
-  minute: "2-digit",
-});
+//lvl3
 
 console.log(
-  new Date().toLocaleString("pl-PL", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  }) 
+  new Date().toLocaleDateString([], {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  })
 );
