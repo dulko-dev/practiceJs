@@ -43,3 +43,44 @@ const findCountry6 = countries.find((country) => country.length == 6);
 const findCountryIndex = countries.findIndex((country) => country.length == 6);
 const findNorway = countries.findIndex((country) => country == "Norway");
 const findRussia = countries.findIndex((country) => country == "Russia");
+
+//lvl2
+
+const filterPrice = products.filter(
+  (product) => typeof product.price == "number"
+);
+const mapPrice = filterPrice.map((product) => product.price);
+const totalPrice = mapPrice.reduce((acc, cur) => acc + cur, 0);
+console.log(totalPrice);
+
+const a = products
+  .sort((a, b) => a.price - b.price)
+  .slice(2)
+  .map((a) => a.price);
+console.log(a.reduce((acc, curr) => acc + curr));
+
+const categorizeCountries = (arr) => {
+  const filterCountry = arr.filter(
+    (arr) =>
+      arr.name.includes("land") ||
+      arr.name.includes("ia") ||
+      arr.name.includes("island") ||
+      arr.name.includes("stan")
+  );
+  return filterCountry;
+};
+
+console.log(categorizeCountries(countrie));
+
+const tenCount = (arr) => {
+  //   return arr.slice(0, 10);
+  //   return arr.splice(0, 10);
+};
+
+console.log(tenCount(countrie));
+
+const getLastTenCountries = (arr) => {
+  return arr.slice(-10);
+};
+
+console.log(getLastTenCountries(countrie))
