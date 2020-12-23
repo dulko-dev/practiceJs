@@ -83,4 +83,25 @@ const getLastTenCountries = (arr) => {
   return arr.slice(-10);
 };
 
-console.log(getLastTenCountries(countrie))
+console.log(getLastTenCountries(countrie));
+
+//lvl3
+
+const copyCountrie = [...countrie];
+
+const sortNameCountrie = (a, b) => {
+  if (a.name > b.name) return 1;
+  if (a.name < b.name) return -1;
+  return 0;
+};
+
+const byCapital = copyCountrie.sort((a, b) => {
+  if (a.capital > b.capital) return 1;
+  if (a.capital < b.capital) return -1;
+  return 0;
+});
+
+const byPopulation = copyCountrie.sort((a, b) => a.population - b.population);
+
+const overCopy = [...countrie];
+
